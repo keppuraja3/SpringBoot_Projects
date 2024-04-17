@@ -12,7 +12,6 @@ import com.college.service.UsersService;
 @Service
 public class UsersServiceImpl implements UsersService {
 
-	
 	@Autowired
 	UsersRepository userRepo;
 
@@ -22,14 +21,12 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	public List<Users> viewUsers() {
-		
+
 		return userRepo.findAll();
 	}
-	
-	
-	public Users viewUserById(int id) {
-		return userRepo.findByName(id);
-	}
-	
-	
+
+	// public Users viewUserById(int id) {
+	// return userRepo.findByName(id);
+	// }
+
 }

@@ -9,6 +9,6 @@ public interface UsersService {
 	String addUser(Users user);
 
 	List<Users> viewUsers();
-	
-	Users viewUserById(int id);
+
+	// Users viewUserById(int id);
 }
