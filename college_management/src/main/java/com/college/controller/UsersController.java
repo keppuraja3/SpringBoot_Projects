@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/")
-@CrossOrigin("http://localhost:5173/")
+@CrossOrigin(origins = "http://localhost:5173/")
 public class UsersController {
 
 	@Autowired
@@ -35,6 +35,11 @@ public class UsersController {
 	@GetMapping("/viewUser/{username}")
 	public Users viewUserByName(@PathVariable String username) {
 		return userServ.viewUserByName(username);
+	}
+
+	@GetMapping("/deleteUserById/{id}")
+	public String getMethodName(@PathVariable int id) {
+		return userServ.deleteUserById(id);
 	}
 
 }

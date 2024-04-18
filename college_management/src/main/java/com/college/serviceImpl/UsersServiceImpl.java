@@ -29,4 +29,9 @@ public class UsersServiceImpl implements UsersService {
 		return userRepo.findByName(username);
 	}
 
+	public String deleteUserById(int id) {
+		userRepo.deleteById(id);
+		return "Deleted successfully";
+	}
+
 }

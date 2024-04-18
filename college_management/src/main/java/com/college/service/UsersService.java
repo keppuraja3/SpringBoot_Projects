@@ -11,4 +11,7 @@ public interface UsersService {
 	List<Users> viewUsers();
 
 	Users viewUserByName(String username);
+
+	String deleteUserById(int id);
+
 }
