@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.college.entity.Users;
 import com.college.service.UsersService;
 import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/")
@@ -32,9 +32,9 @@ public class UsersController {
 		return userServ.viewUsers();
 	}
 
-	// @GetMapping("/viewUser/{id}")
-	// public Users viewUserById(@PathVariable int id) {
-	// return userServ.viewUserById(id);
-	// }
+	@GetMapping("/viewUser/{username}")
+	public Users viewUserByName(@PathVariable String username) {
+		return userServ.viewUserByName(username);
+	}
 
 }

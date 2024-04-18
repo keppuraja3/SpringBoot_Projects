@@ -10,5 +10,5 @@ public interface UsersService {
 
 	List<Users> viewUsers();
 
-	// Users viewUserById(int id);
+	Users viewUserByName(String username);
 }

@@ -25,8 +25,8 @@ public class UsersServiceImpl implements UsersService {
 		return userRepo.findAll();
 	}
 
-	// public Users viewUserById(int id) {
-	// return userRepo.findByName(id);
-	// }
+	public Users viewUserByName(String username) {
+		return userRepo.findByName(username);
+	}
 
 }
