@@ -34,4 +34,17 @@ public class UsersServiceImpl implements UsersService {
 		return "Deleted successfully";
 	}
 
+	public String updateUserById(Users user, int id) {
+		Users u = userRepo.findById(id).get();
+		u.setId(user.getId());
+		u.setUserEmail(user.getUserEmail());
+		u.setUserMobileNo(user.getUserMobileNo());
+		u.setUserName(user.getUserName());
+		u.setUserPassword(user.getUserPassword());
+		u.setUserRole(user.getUserRole());
+		userRepo.save(u);
+		return "Updated Successfully";
+
+	}
+
 }

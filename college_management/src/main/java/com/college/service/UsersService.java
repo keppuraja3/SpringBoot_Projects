@@ -14,4 +14,6 @@ public interface UsersService {
 
 	String deleteUserById(int id);
 
+	String updateUserById(Users user, int id);
+
 }

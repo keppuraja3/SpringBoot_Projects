@@ -42,4 +42,10 @@ public class UsersController {
 		return userServ.deleteUserById(id);
 	}
 
+	@PostMapping("/updateUserById/{id}")
+
+	public String updateUserById(@RequestBody Users user, @PathVariable int id) {
+		return userServ.updateUserById(user, id);
+	}
+
 }
