@@ -1,31 +1,32 @@
 package com.college.serviceImpl;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Service;
 
-import com.college.entity.Students;
-import com.college.repository.StudentsRepository;
-import com.college.service.StudentsService;
+// import com.college.entity.Students;
+// import com.college.repository.StudentsRepository;
+// import com.college.service.StudentsService;
 
-@Service
-public class StudentsServiceImpl implements StudentsService {
-    @Autowired
-    StudentsRepository stuRepo;
+// @Service
+// public class StudentsServiceImpl implements StudentsService {
+public class StudentsServiceImpl {
+    // @Autowired
+    // StudentsRepository stuRepo;
 
-    public String addStudent(Students students) {
-        stuRepo.save(students);
-        return "Added Successfully";
-    }
+    // public String addStudent(Students students) {
+    // stuRepo.save(students);
+    // return "Added Successfully";
+    // }
 
-    public List<Students> viewStudents() {
-        return stuRepo.findAll();
-    }
+    // public List<Students> viewStudents() {
+    // return stuRepo.findAll();
+    // }
 
-    public Students viewStudentByName(String stuname) {
-        return stuRepo.findByName(stuname);
-    }
+    // public Students viewStudentByName(String stuname) {
+    // return stuRepo.findByName(stuname);
+    // }
 
     // public String updateUserById(Students stu, int id) {
     // Students u = stuRepo.findById(id).get();
