@@ -1,62 +1,70 @@
 package com.college.entity;
 
-// import jakarta.persistence.Entity;
-// import jakarta.persistence.GeneratedValue;
-// import jakarta.persistence.GenerationType;
-// import jakarta.persistence.Id;
-// import jakarta.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-// @Entity
-// @Table(name = "students")
+@Entity
+@Table(name = "students")
 public class Students {
 
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String stuName;
+    private String stuEmail;
+    private String stuCourse;
+    private long stuMobileNo;
+    private String stuDepartment;
 
-    // private String name;
-    // private String className;
-    // private int year;
-    // private int regNo;
+    public int getId() {
+        return id;
+    }
 
-    // public int getId() {
-    // return id;
-    // }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    // public void setId(int id) {
-    // this.id = id;
-    // }
+    public String getStuName() {
+        return stuName;
+    }
 
-    // public String getName() {
-    // return name;
-    // }
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
+    }
 
-    // public void setName(String name) {
-    // this.name = name;
-    // }
+    public String getStuEmail() {
+        return stuEmail;
+    }
 
-    // public String getClassName() {
-    // return className;
-    // }
+    public void setStuEmail(String stuEmail) {
+        this.stuEmail = stuEmail;
+    }
 
-    // public void setClassName(String className) {
-    // this.className = className;
-    // }
+    public String getStuCourse() {
+        return stuCourse;
+    }
 
-    // public int getYear() {
-    // return year;
-    // }
+    public void setStuCourse(String stuCourse) {
+        this.stuCourse = stuCourse;
+    }
 
-    // public void setYear(int year) {
-    // this.year = year;
-    // }
+    public long getStuMobileNo() {
+        return stuMobileNo;
+    }
 
-    // public int getRegNo() {
-    // return regNo;
-    // }
+    public void setStuMobileNo(long stuMobileNo) {
+        this.stuMobileNo = stuMobileNo;
+    }
 
-    // public void setRegNo(int regNo) {
-    // this.regNo = regNo;
-    // }
+    public String getStuDepartment() {
+        return stuDepartment;
+    }
+
+    public void setStuDepartment(String stuDepartment) {
+        this.stuDepartment = stuDepartment;
+    }
 
 }
