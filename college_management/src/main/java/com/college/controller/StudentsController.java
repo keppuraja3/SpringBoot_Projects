@@ -31,25 +31,14 @@ public class StudentsController {
         return stuServ.viewStudents();
     }
 
-    // @GetMapping("/viewStudent/{studentname}")
-    // public Students viewStudentByName(@PathVariable String studentname) {
-    // return stuServ.viewStudentByName(studentname);
-    // }
+    @GetMapping("/deleteStudentById/{id}")
+    public String getMethodName(@PathVariable int id) {
+        return stuServ.deleteStudentById(id);
+    }
 
-    // @GetMapping("/viewStudent/{id}")
-    // public Students viewStudentById(@PathVariable int id) {
-    // return stuServ.viewStudentById(id);
-    // }
-
-    // @GetMapping("/deleteStudentsById/{id}")
-    // public String getMethodName(@PathVariable int id) {
-    // return stuServ.deleteStudentById(id);
-    // }
-
-    // @PostMapping("/updateUserById/{id}")
-    // public String updateUserById(@RequestBody Students stu, @PathVariable int id)
-    // {
-    // return stuServ.updateUserById(stu, id);
-    // }
+    @PostMapping("/updateStudentById/{id}")
+    public String updateStudentById(@RequestBody Students stu, @PathVariable int id) {
+        return stuServ.updateStudentById(stu, id);
+    }
 
 }

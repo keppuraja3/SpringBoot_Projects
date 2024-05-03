@@ -23,29 +23,26 @@ public class StudentsServiceImpl implements StudentsService {
         return stuRepo.findAll();
     }
 
-    // public Students viewStudentByName(String stuname) {
-    // return stuRepo.findByName(stuname);
-    // }
-
     // public Students viewStudentById(int id) {
     // return stuRepo.findById(id).get();
     // }
 
-    // public String updateUserById(Students stu, int id) {
-    // Students u = stuRepo.findById(id).get();
-    // u.setId(stu.getId());
-    // u.setUserEmail(stu.getUserEmail());
-    // u.setUserMobileNo(stu.getUserMobileNo());
-    // u.setUserName(stu.getUserName());
-    // u.setUserPassword(stu.getUserPassword());
-    // u.setUserRole(stu.getUserRole());
-    // stuRepo.save(u);
-    // return "Updated Successfully";
-    // }
+    public String updateStudentById(Students stu, int id) {
+        Students u = stuRepo.findById(id).get();
+        u.setId(stu.getId());
+        u.setStuName(stu.getStuName());
+        u.setStuEmail(stu.getStuEmail());
+        u.setStuMobileNo(stu.getStuMobileNo());
+        u.setStuDepartment(stu.getStuDepartment());
+        u.setStuCourse(stu.getStuCourse());
 
-    // public String deleteStudentById(int id) {
-    // stuRepo.deleteById(id);
-    // return "Deleted successfully";
-    // }
+        stuRepo.save(u);
+        return "Updated Successfully";
+    }
+
+    public String deleteStudentById(int id) {
+        stuRepo.deleteById(id);
+        return "Deleted successfully";
+    }
 
 }

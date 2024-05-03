@@ -3,6 +3,8 @@ package com.college.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.college.entity.Users;
@@ -25,8 +27,13 @@ public class UsersServiceImpl implements UsersService {
 		return userRepo.findAll();
 	}
 
-	public Users viewUserByName(String username) {
-		return userRepo.findByName(username);
+	public ResponseEntity<?> findUserByNameAndPass(String username, String password) {
+		Users u = userRepo.findUserByNameAndPass(username, password);
+		if (u == null) {
+			return ResponseEntity.status(HttpStatus.OK).body("Username is incorrect!");
+		} else {
+			return ResponseEntity.status(HttpStatus.OK).body(u);
+		}
 	}
 
 	public String deleteUserById(int id) {

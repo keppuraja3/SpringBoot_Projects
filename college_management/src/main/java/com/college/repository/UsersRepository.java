@@ -9,7 +9,7 @@ import com.college.entity.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Integer> {
 
-	@Query("Select u from Users u where u.userName=?1")
-	Users findByName(String u);
+	@Query("Select u from Users u where u.userName=?1 and u.userPassword=?2")
+	Users findUserByNameAndPass(String username, String password);
 
 }

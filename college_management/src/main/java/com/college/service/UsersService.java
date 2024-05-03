@@ -2,6 +2,8 @@ package com.college.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+
 import com.college.entity.Users;
 
 public interface UsersService {
@@ -10,7 +12,7 @@ public interface UsersService {
 
 	List<Users> viewUsers();
 
-	Users viewUserByName(String username);
+	ResponseEntity<?> findUserByNameAndPass(String username, String password);
 
 	String deleteUserById(int id);
 

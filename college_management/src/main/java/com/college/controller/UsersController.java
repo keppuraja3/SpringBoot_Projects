@@ -2,6 +2,8 @@ package com.college.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,18 +33,17 @@ public class UsersController {
 		return userServ.viewUsers();
 	}
 
-	@GetMapping("/viewUser/{username}")
-	public Users viewUserByName(@PathVariable String username) {
-		return userServ.viewUserByName(username);
+	@GetMapping("/findUser/{username}/{password}")
+	public ResponseEntity<?> findUserByNameAndPass(@PathVariable String username, @PathVariable String password) {
+		return ResponseEntity.status(HttpStatus.OK).body(userServ.findUserByNameAndPass(username, password));
 	}
 
 	@GetMapping("/deleteUserById/{id}")
-	public String getMethodName(@PathVariable int id) {
+	public String deleteUserById(@PathVariable int id) {
 		return userServ.deleteUserById(id);
 	}
 
 	@PostMapping("/updateUserById/{id}")
-
 	public String updateUserById(@RequestBody Users user, @PathVariable int id) {
 		return userServ.updateUserById(user, id);
 	}

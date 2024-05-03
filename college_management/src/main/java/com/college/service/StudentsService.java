@@ -13,7 +13,7 @@ public interface StudentsService {
 
     // Students viewStudentById(int id);
 
-    // String updateUserById(Students stu, int id);
+    String updateStudentById(Students stu, int id);
 
-    // String deleteStudentById(int id);
+    String deleteStudentById(int id);
 }
